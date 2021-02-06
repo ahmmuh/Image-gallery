@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+}
+.navbar {
+  height: auto;
+}
+.navbar a {
+  color: white !important;
+}
+.navbar-brand {
+  font-family: "Roboto", sans-serif;
+}
+.item-container {
+  margin: 0.2rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 100px 300px;
+  grid-gap: 0.2rem;
+  grid-auto-flow: dense;
+}
+
+.gallery-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.gallery-item .image {
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.gallery-item .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.8s ease-in-out;
+}
+.gallery-item .image:hover img {
+  transform: scale(1.4);
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  -o-transform: scale(1.4);
+}
+.gallery-item .text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  font-size: 1rem;
+  pointer-events: none;
+  z-index: 3;
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  opacity: 0;
+  backdrop-filter: blur(10px) saturate(1.8);
+}
+.gallery-item:hover .text {
+  opacity: 1;
+  animation: move-up 0.2s linear;
+  -webkit-animation: move-down 1s linear;
+}
+.horisontal {
+  grid-column: span 2;
+}
+.vertical {
+  grid-row: span 3;
+}
+
+.horisontal-speciell {
+  grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+  .item-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@keyframes move-down {
+  100% {
+    top: 50%;
+  }
+  50% {
+    top: 100%;
+  }
+  10% {
+    top: 10%;
+  }
+}
+footer {
+  height: 20rem;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+footer p {
+  float: right;
+}
