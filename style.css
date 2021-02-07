@@ -8,9 +8,7 @@ body {
 .navbar a {
   color: white !important;
 }
-.navbar-brand {
-  font-family: "Roboto", sans-serif;
-}
+
 .item-container {
   margin: 0.2rem;
   display: grid;
@@ -54,12 +52,13 @@ body {
   left: 50%;
   top: 50%;
   color: white;
+  font-family: "Roboto", sans-serif;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  font-size: 1rem;
+  font-size: 1.4rem;
   pointer-events: none;
   z-index: 3;
   transition: 0.2s ease-in-out;
@@ -72,24 +71,24 @@ body {
 }
 .gallery-item:hover .text {
   opacity: 1;
-  animation: move-up 0.2s linear;
-  -webkit-animation: move-down 1s linear;
+  animation: move-down 0.2s linear;
+  -webkit-animation: move-down 0.2s linear;
 }
 .horisontal {
   grid-column: span 2;
 }
 .vertical {
-  grid-row: span 3;
+  grid-row: span 2;
 }
-
-.horisontal-speciell {
+.big {
+  grid-column: span 2;
   grid-row: span 2;
 }
 
 @media (max-width: 768px) {
   .item-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -109,6 +108,7 @@ footer {
   color: white;
   display: grid;
   grid-template-columns: 1fr;
+  align-items: flex-end;
 }
 
 footer p {
