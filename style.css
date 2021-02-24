@@ -23,6 +23,56 @@ body {
   height: 100%;
   position: relative;
 }
+/* modal style */
+.modal {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1;
+  display: none;
+}
+.modal-content {
+  background-color: #fff;
+  width: 40%;
+  margin: 10% auto;
+  padding: 13px;
+  animation-name: openModal;
+  animation-duration: 1.5s;
+  text-align: center;
+}
+.modal-content h3 {
+  margin: 0;
+}
+/* animate modal */
+@keyframes openModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-image-container img {
+  margin: 0;
+  max-width: 100%;
+}
+
+#closeBtn:hover {
+  color: red;
+}
+
+#closeBtn {
+  cursor: pointer;
+  border: 0;
+  width: 10%;
+  float: right;
+}
+
 .gallery-item .image {
   max-width: 100%;
   height: 100%;
@@ -47,19 +97,17 @@ body {
   -ms-transform: scale(1.4);
   -o-transform: scale(1.4);
 }
-.gallery-item .text {
+.gallery-item .gallery-title {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 40%;
+  top: 40%;
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  font-size: 1.4rem;
-  pointer-events: none;
   z-index: 3;
   transition: 0.2s ease-in-out;
   -webkit-transition: 0.2s ease-in-out;
@@ -69,10 +117,39 @@ body {
   opacity: 0;
   backdrop-filter: blur(10px) saturate(1.8);
 }
+.gallery-item .text {
+  position: absolute;
+  left: 60%;
+  top: 60%;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  font-size: 1.1rem;
+  pointer-events: none;
+  z-index: 3;
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  display: none;
+  backdrop-filter: blur(10px) saturate(1.8);
+}
+
 .gallery-item:hover .text {
   opacity: 1;
   animation: move-down 0.2s linear;
   -webkit-animation: move-down 0.2s linear;
+}
+
+.gallery-item:hover .gallery-title {
+  animation: move-down 0.2s linear;
+  -webkit-animation: move-down 0.2s linear;
+  opacity: 1;
 }
 .horisontal {
   grid-column: span 2;
